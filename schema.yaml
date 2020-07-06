@@ -1,0 +1,179 @@
+---
+  intro: 
+    name: 
+      type: string
+    title:
+      type: string
+    avatar:
+      display:
+        type: boolean
+      path:
+        type: string
+  
+  contact:
+    email: 
+      type: string
+    phone:
+      type: string
+    wechat: 
+      type: string
+      required: false
+    telegram: 
+      type: string
+      required: false
+    website: 
+      type: string
+      required: false
+    linkedin: 
+      type: string
+      required: false
+    github: 
+      type: string
+      required: false
+    gitlab: 
+      type: string
+      required: false
+    bitbucket: 
+      type: string
+      required: false
+    twitter: 
+      type: string
+      required: false
+    stackoverflow: 
+      type: string
+      required: false
+    codewars: 
+      type: string
+      required: false
+    goodreads: 
+      type: string
+      required: false
+    googlescholar: 
+      type: string
+      required: false
+    researchgate: 
+      type: string
+      required: false
+    resume: 
+      type: string
+      required: false
+  
+  languages:
+    display: 
+      type: boolean
+    title:
+      type: string
+    items:
+      - idiom:
+          type: string
+        level:
+          type: string
+  
+  interests:
+    display: 
+      type: boolean
+    title:
+      type: string
+    items:
+      - item:
+          type: string
+  
+  profile:
+    display: 
+      type: boolean
+    title:
+      type: string
+    details:
+      type: string
+  
+  education:
+    display: 
+      type: boolean
+    title:
+      type: string
+    items:
+      - university:
+          type: string
+        time:
+          type: string
+        major:
+          type: string
+        degree:
+          type: string
+        gpa:
+          type: string
+        details:
+          type: string
+  
+  experiences:
+    display: 
+      type: boolean
+    title:
+      type: string
+    items:
+      - role:
+          type: string
+        time:
+          type: string
+        company:
+          type: string
+        location:
+          type: string
+        details:
+          type: string
+  
+  projects:
+    display: 
+      type: boolean
+    title:
+      type: string
+    intro:
+      type: string
+    items:
+      - name:
+          type: string
+        link:
+          type: string
+        details:
+          type: string
+  
+  publications:
+    display: 
+      type: boolean
+    title:
+      type: string
+    intro:
+      type: string
+    items:
+      - title:
+          type: string
+        authors:
+          type: string
+        conference:
+          type: string
+        link: 
+          type: string
+  
+  skills:
+    display: 
+      type: boolean
+    title:
+      type: string
+    details:
+      type: string
+  
+  evaluation:
+    display: 
+      type: boolean
+    title:
+      type: string
+    details:
+      type: string
+
+  footer:
+    display:
+      type: boolean
+  
+  close:
+    type: string
+        

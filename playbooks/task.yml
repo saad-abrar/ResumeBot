@@ -1,0 +1,63 @@
+---
+- hosts: jenkins
+  tasks:
+   - name: 'copy cookies'
+     copy:
+       src: '/home/cookies'
+       dest : '/home/'
+       
+   - name: 'install dependencies for app'
+     shell: 'sudo apt-get install gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
+'
+   
+   
+- hosts: web
+  vars: 
+    dir: '/root/resumeslackbot'
+
+  tasks:
+   - name: setup latest nodejs package repo
+     shell: "curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -"
+   
+   - name: Install nodejs
+     shell: 'sudo apt install -y nodejs git'
+  
+
+   - name: Install forever
+     npm: 
+       name: forever
+       global: yes
+     become: yes
+  
+   - name: clone git repo
+     git:
+       repo: 'https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@github.ncsu.edu/csc510-fall2019/CSC510-20.git'
+       dest: '{{dir}}'
+   
+  #  - name: Install nodejs
+  #    shell: 'git checkout experimental'
+  #    args:
+  #      chdir: "{{dir}}"
+     
+   - name: npm install
+     command: 'npm install --save'
+     args:
+       chdir: '{{dir}}'
+       
+   - name: 'copy .env'
+     copy:
+       src: '/home/rr/Workspace/csc510-20/.env'
+       dest : '{{dir}}'
+       
+   - name: 'copy cookies'
+     copy:
+       src: '/home/cookies'
+       dest : '/home/'
+   
+   - name: run the app
+     command: 'forever start -o out.log -e err.log index.js'
+     args:
+       chdir: '{{dir}}'
+
+
+# ansible-playbook -i inventory task.yml -e "githubuser=***" -e "githubpassword=***"

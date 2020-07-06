@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+.DS_Store
+/*.env
+.vscode
+file.yml
+node_modules
+resources/cookies
+tmp/*
+

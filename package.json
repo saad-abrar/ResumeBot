@@ -1,0 +1,58 @@
+{
+  "name": "resumeslackbot",
+  "version": "1.0.0",
+  "description": "This will generate a static resume webpage",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "./node_modules/.bin/mocha --reporter spec test/unit_tests.js --timeout 50000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.ncsu.edu/csc510-fall2019/CSC510-20"
+  },
+  "keywords": [
+    "slack",
+    "bot"
+  ],
+  "author": "Rayhanur Rahman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.ncsu.edu/csc510-fall2019/CSC510-20/issues"
+  },
+  "homepage": "https://github.ncsu.edu/csc510-fall2019/CSC510-20#readme",
+  "engines": {
+    "node": "12.11.1",
+    "npm": "6.12.0"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.13",
+    "aws-sdk": "^2.551.0",
+    "botbuilder-adapter-slack": "^1.0.4",
+    "botkit": "0.7.0",
+    "botkit-storage-mongo": "^1.0.2",
+    "bson": "^4.0.2",
+    "chai": "^4.2.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "fs-extra": "^8.1.0",
+    "got": "^9.6.0",
+    "json2yaml": "^1.1.0",
+    "mocha": "^6.2.2",
+    "mockery": "^2.1.0",
+    "mongodb": "^3.3.3",
+    "nock": "^11.4.0",
+    "puppeteer": "^1.20.0",
+    "request": "^2.88.0",
+    "rimraf": "^3.0.0",
+    "scrapedin": "^1.0.10",
+    "selenium-webdriver": "^4.0.0-alpha.5",
+    "transfer-sh": "^2.1.1",
+    "walk": "^2.3.14",
+    "yaml-lint": "^1.2.4",
+    "yaml-schema-validator": "^1.1.9",
+    "yaml-validator": "^2.2.0",
+    "zip-a-folder": "0.0.9"
+  }
+}
