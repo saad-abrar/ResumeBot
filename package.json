@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "adm-zip": "^0.4.13",
-    "aws-sdk": "^2.551.0",
+    "aws-sdk": "^2.814.0",
     "botbuilder-adapter-slack": "^1.0.4",
     "botkit": "0.7.0",
     "botkit-storage-mongo": "^1.0.2",
